@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meraki Controller</title>
+</head>
+<body>
+
+<h1>Toggle Policy</h1>
+
+
+
+<button id="toggle">Toggle Policy</button>
+<script type="text/javascript">
+    const button = document.getElementById('toggle');
+    button.onclick = async () => {
+        button.textContent = 'Toggling...'
+        const response = await fetch('/toggle')
+      const data = await response.json();
+        console.log(data)
+        button.textContent = 'Toggle Policy - Current: ' + data.type
+    }
+</script>
+</body>
+</html>
