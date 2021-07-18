@@ -17,3 +17,8 @@ node server.js
 ```
 Then navigate to: http://localhost:8080
 
+### Create docker image
+```
+docker build . -t meraki
+docker run -p 8080:8080 --env API_KEY=hi --env ORGANIZATION_ID=hi --env NETWORK_ID=hi --env CLIENT_ID=hi -d meraki
+```
